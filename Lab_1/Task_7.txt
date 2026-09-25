@@ -1,0 +1,7 @@
+A function header gives clarification about what a function is going to do. 
+So that way when someone is parsing through your code they can know what is going to happen when
+
+Fuctions keep your code shorter and they make the code easier to read, because like then you have all the equations and calculations in a different file than
+#everything else. This all around just keeps everything really nice and simple - you can also then ensure that everytime you go to use a function
+it is the same fuction. Also if you need to change something about a specific function then you can change it once and know it 
+is the same for everything.
