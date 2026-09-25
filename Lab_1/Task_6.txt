@@ -1,0 +1,14 @@
+Operator        Form/Description            Example 
+--------------------------------------------------------
+==              value1==value2          5==5 returns True 
+                Equal to
+!=              value1 != value2        5 != 3 returns True 
+                Not equal to 
+>               value1 > value2         5 > 3 returns True    
+                Greater than 
+<               value1 < value2         5 < 3 returns False 
+                Less than 
+>=              value1 >= value2        5>=5 returns True 
+                Greater than or equal to  
+<=              value1 <= value2        5<=5 returns True 
+                Less than or equal to                    
