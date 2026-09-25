@@ -13,6 +13,7 @@ def percentage(ice, midterm, final, orientation, quizes, labs, homework):
     total_percentage = (0.14 * ice_p) + (0.20 * midterm_p) + (0.2 * final_p) + (0.01 *  orientation_p) + (0.1 * quizes_p) + (0.25 * labs_p) + (0.1 * homework_p)
     return total_percentage
 
+#Added this function, because it made everything at the bottom so much cleaner
 def lettergrade(total_percentage):
     if total_percentage >= 0.85:
         l = 'A'
@@ -30,6 +31,7 @@ def lettergrade(total_percentage):
         l = 'F'
         return l
 
+#Grade calculator - getting the variables and doing all the stuff with the user
 print('Welcome to the Grade Calculator')
 
 ice = int(input('Out of 500, How many points did you get for the ICES: '))
@@ -42,9 +44,12 @@ Quizes = int(input('What was your total score, out of 60 for all 4 quizzes?: '))
 Labs = int(input('How many points did you get from lab (Out of 900): '))
 Homework = int(input('How many points did you get from all your homeworks?: '))
 
+#Final calculations and running through the functions
 total_percentage = percentage(ice, midterm_t, final, orientation, Quizes, Labs, Homework)
 letter_grade = lettergrade(total_percentage)
 
+#Realized it was all a decimal, so making it a percentage here
 percent_n = 100 * total_percentage
 
+#Printing the actual grades out
 print('Your final grade was a',percent_n ,'%, You got a', letter_grade, 'in the class!')
