@@ -12,11 +12,11 @@ GPIO.output(led,False)
 t = 0
 
 while t <= 14: 
-   if GPIO.input(button):
+   if GPIO.input(button)==GPIO.LOW:
     GPIO.output(led,True)
    else:
     GPIO.output(led,False)
-
-t = t + 1
+    t = t + 1
+    time.sleep(1)
 GPIO.cleanup()
 
