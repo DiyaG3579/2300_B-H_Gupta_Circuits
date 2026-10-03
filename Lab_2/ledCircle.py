@@ -1,7 +1,8 @@
+#Importing all the usual imputs
 import RPi.GPIO as GPIO
 import time
 
-#Setting up the board
+#Setting up the board - notice how I start by cleaning, pretty advanced if I do say so myself
 GPIO.cleanup()
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
@@ -30,6 +31,7 @@ GPIO.setup(l9,GPIO.OUT)
 
 t = 0
 
+#Starting everything as false (cause otherwise things were lighting up in wierd ways)
 GPIO.output(l1, False)
 GPIO.output(l2, False)
 GPIO.output(l3, False)
@@ -40,6 +42,7 @@ GPIO.output(l7, False)
 GPIO.output(l8, False)
 GPIO.output(l9, False)
 
+#Did t < 5, since t never increases and therefore it is an infinite loop
 while t < 5:
     GPIO.output(l1,True)
     time.sleep(0.5)

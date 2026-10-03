@@ -4,7 +4,7 @@ import time
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
 led = 12
-button = 16
+button = 18
 GPIO.setup(led,GPIO.OUT)
 GPIO.setup(button, GPIO.IN)
 GPIO.output(led,False)
