@@ -31,8 +31,8 @@ import time
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(36, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 while True:
-    print(GPIO.input(18))
+    print(GPIO.input(36))
     time.sleep(0.3)

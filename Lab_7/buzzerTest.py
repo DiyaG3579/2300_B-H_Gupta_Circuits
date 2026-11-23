@@ -18,11 +18,11 @@ t = 0
 GPIO.setup(led,GPIO.OUT)
 GPIO.setup(buzzer,GPIO.OUT)
 
-buzzerB = GPIO.PWM(buzzer, 2400)
+buzzerB = GPIO.PWM(buzzer, 2000)
 
-GPIO.output(led, False)
-buzzer.start(50)
-time.sleep(1.0)
+GPIO.output(led, True)
+buzzerB.start(50)
+time.sleep(0.5)
 
 GPIO.output(led,False)
 buzzerB.stop()
