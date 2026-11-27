@@ -1,3 +1,4 @@
+#This was option 2, we ran it by Professer Nussiov and she said it was fine 
 import RPi.GPIO as GPIO
 import time
 
@@ -5,20 +6,23 @@ GPIO.cleanup()
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD) # use board pin numbers
 
+#Adding a button in, glad there is no buzzer
 Data = 36 #GPIO 16
 Clock = 22 #GPIO 25
 Latch = 32 #GPIO 12
 button = 40
 
+#Indexors
 t = 0
 j = 0
 
-# Set all pins as output
+# Set upppppp
 GPIO.setup(Data, GPIO.OUT)
 GPIO.setup(Clock, GPIO.OUT)
 GPIO.setup(Latch, GPIO.OUT)
 GPIO.setup(button, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
+#same deal same deal
 GPIO.output(Latch, 0)
 GPIO.output(Clock, 0)
 
@@ -35,15 +39,15 @@ def light(pattern):
 
     GPIO.output(Latch, 1)
     GPIO.output(Latch, 0)
-
+#Ah where it finally gets interesting, so the countdown starts upon the push of the button - however the pause was what was interesting
 while t < 25:
     if GPIO.input(button) == GPIO.HIGH:
         while j < 25:
-            light("00001000") #9
+            light("00001000") #9 #Added these, because after trying to read the other code, omg I needed this
             time.sleep(0.5)
-            if GPIO.input(button) == GPIO.HIGH:
+            if GPIO.input(button) == GPIO.HIGH: #So if the button gets pushed again, no matter where in the countdown it is, it will exit
                 break
-            light("00000000") #8
+            light("00000000") #8 #You will notice that all zeros is off, because we had a common cathode rather than a common annode
             time.sleep(0.5)
             if GPIO.input(button) == GPIO.HIGH:
                 break
